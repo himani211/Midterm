@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   banking-microservice:
     image: tomcat:8.5

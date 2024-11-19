@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  banking-microservice:
+    image: tomcat:8.5
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/mvn-hello-world.war:/usr/local/tomcat/webapps/ROOT.war
+    networks:
+      - banking-network
+
+networks:
+  banking-network:
+    driver: bridge
+

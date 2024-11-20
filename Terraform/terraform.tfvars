@@ -1,6 +1,6 @@
 subscription_id          = "99829cc0-9954-4b37-ab16-4a9c3bcd7a82"
 
-location                 = "Canada Central"
+location                 = "West US"
 
 resource_group_name      = "rgtf-S3"
 

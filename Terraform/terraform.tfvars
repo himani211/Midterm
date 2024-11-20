@@ -1,5 +1,5 @@
 subscription_id          = "99829cc0-9954-4b37-ab16-4a9c3bcd7a82"
-location                 = "Canada Central"
+location                 = "East US"
 resource_group_name      = "rg2-S4"  # Updated resource group name
 vnet_name                = "vnet-S4"  # Updated VNet name
 address_space            = ["10.0.0.0/19"]  # Same address space

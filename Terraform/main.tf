@@ -45,7 +45,7 @@ resource "azurerm_network_security_group" "nsg" {
 }
 
 # Public IP Address
-resource "azurerm_public_ip" "vm_public_ip" {
+resource "azurerm_public_ip" "vm_public_ipaddr" {
   name                = "vm-public-ip-S3"
   location            = var.location
   resource_group_name = var.resource_group_name
@@ -63,7 +63,7 @@ resource "azurerm_network_interface" "nic_linux" {
     name                          = "ipconfig-linux-S3"
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.vm_public_ip.id
+    public_ip_address_id          = azurerm_public_ip.vm_public_ipaddr.id
   }
 }
 
@@ -146,5 +146,5 @@ EOT
 
 # Output Public IP Address
 output "vm_public_ip" {
-  value = azurerm_public_ip.vm_public_ip.ip_address
+  value = azurerm_public_ip.vm_public_ipaddr.ip_address
 }

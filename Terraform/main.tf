@@ -8,7 +8,7 @@ provider "azurerm" {
  
 # Resource Group
 
-resource "azurerm_resource_group" "rg2" {
+resource "azurerm_resource_group" "rg" {
 
   name     = var.resource_group_name
 
@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "rg2" {
  
 # Virtual Network
 
-resource "azurerm_virtual_network" "vnett" {
+resource "azurerm_virtual_network" "Vnett01" {
 
   name                = var.vnet_name
 
@@ -38,7 +38,7 @@ resource "azurerm_subnet" "subnet" {
 
   resource_group_name  = var.resource_group_name
 
-  virtual_network_name = azurerm_virtual_network.vnett.name
+  virtual_network_name = azurerm_virtual_network.Vnett01.name
 
   address_prefixes     = var.subnet_address_prefix
 
@@ -46,7 +46,7 @@ resource "azurerm_subnet" "subnet" {
  
 # Network Security Group
 
-resource "azurerm_network_security_group" "nsgg" {
+resource "azurerm_network_security_group" "nsg01" {
 
   name                = var.nsg_name
 
@@ -80,7 +80,7 @@ resource "azurerm_network_security_group" "nsgg" {
  
 # Public IP Address
 
-resource "azurerm_public_ip" "vm_public_ipaddr1" {
+resource "azurerm_public_ip" "vm_public_ipaddr11" {
 
   name                = "vm-public-ip-S3"
 
@@ -112,7 +112,7 @@ resource "azurerm_network_interface" "nic_linux" {
 
     private_ip_address_allocation = "Dynamic"
 
-    public_ip_address_id          = azurerm_public_ip.vm_public_ipaddr1.id
+    public_ip_address_id          = azurerm_public_ip.vm_public_ipaddr11.id
 
   }
 
@@ -124,7 +124,7 @@ resource "azurerm_network_interface_security_group_association" "nic_nsg" {
 
   network_interface_id      = azurerm_network_interface.nic_linux.id
 
-  network_security_group_id = azurerm_network_security_group.nsgg.id
+  network_security_group_id = azurerm_network_security_group.nsg01.id
 
 }
  
@@ -244,6 +244,6 @@ EOT
 
 output "vm_public_ip" {
 
-  value = azurerm_public_ip.vm_public_ipaddr1.ip_address
+  value = azurerm_public_ip.vm_public_ipaddr11.ip_address
 
 }

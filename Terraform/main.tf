@@ -21,7 +21,7 @@ resource "azurerm_virtual_network" "Vnet11" {
 resource "azurerm_subnet" "subnet11" {
   name                 = var.subnet_name
   resource_group_name  = var.resource_group_name
-  virtual_network_name = azurerm_virtual_network.vnet.name
+  virtual_network_name = azurerm_virtual_network.Vnet11.name
   address_prefixes     = var.subnet_address_prefix
 }
 
@@ -70,7 +70,7 @@ resource "azurerm_network_interface" "nic_linux" {
 # Associate NSG with NIC
 resource "azurerm_network_interface_security_group_association" "nic_nsg" {
   network_interface_id      = azurerm_network_interface.nic_linux.id
-  network_security_group_id = azurerm_network_security_group.nsg.id
+  network_security_group_id = azurerm_network_security_group.nsg1.id
 }
 
 # Linux Virtual Machine

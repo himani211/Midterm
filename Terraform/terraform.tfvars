@@ -1,11 +1,11 @@
 subscription_id          = "99829cc0-9954-4b37-ab16-4a9c3bcd7a82"
 location                 = "East US"
-resource_group_name      = "rg21-S4"  # Updated resource group name
-vnet_name                = "vnet1-S4"  # Updated VNet name
-address_space            = ["10.0.0.0/19"]  # Same address space
-subnet_name              = "subnet1-S4"  # Updated subnet name
-subnet_address_prefix    = ["10.0.1.0/24"]  # Updated subnet address prefix
-nsg_name                 = "nsg1-S4"  # Updated NSG name
+resource_group_name      = "rg211-S4"  # Updated resource group name
+vnet_name                = "vnet11-S4"  # Updated VNet name
+address_space            = ["10.10.0.0/19"]  # Same address space
+subnet_name              = "subnet11-S4"  # Updated subnet name
+subnet_address_prefix    = ["10.10.1.0/24"]  # Updated subnet address prefix
+nsg_name                 = "nsg11-S4"  # Updated NSG name
 vm_admin_username        = "adminuser"  # Same admin username
 vm_admin_password        = "Password@123"  # Same password (can be updated)
 vm_size                  = "Standard_DS1_v2"  # Same VM size

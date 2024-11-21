@@ -1,6 +1,6 @@
 ---
 - name: Install Docker on Rocky
-  hosts: 13.93.177.48
+  hosts: 10.20.0.4
   become: true
   tasks:
     - name: Add Docker repository

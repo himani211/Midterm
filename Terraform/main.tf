@@ -75,6 +75,27 @@ resource "azurerm_network_security_group" "nsg01" {
     destination_address_prefix = "*"
 
   }
+  security_rule {
+
+    name                       = "Allow8000"
+
+    priority                   = 1001
+
+    direction                  = "Inbound"
+
+    access                     = "Allow"
+
+    protocol                   = "*"
+
+    source_port_range          = "*"
+
+    destination_port_range     = "8000"
+
+    source_address_prefix      = "*"
+
+    destination_address_prefix = "*"
+
+  }
 
 }
  

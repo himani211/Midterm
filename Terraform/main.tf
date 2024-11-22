@@ -170,3 +170,19 @@ EOT
 output "vm_public_ip" {
   value = azurerm_public_ip.vm_public_ipaddr11.ip_address
 }
+
+# Install epel-release (to enable additional repositories for packages like Ansible)
+echo "Installing epel-release..."
+sudo dnf -y install epel-release
+ 
+# Install Ansible
+echo "Installing Ansible..."
+sudo dnf -y install ansible
+ 
+# Install Git
+echo "Installing Git..."
+sudo dnf -y install git
+ 
+# Install JDK 17
+echo "Installing OpenJDK 17..."
+sudo dnf -y install java-17-openjdk-devel

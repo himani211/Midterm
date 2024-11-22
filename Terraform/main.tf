@@ -69,7 +69,7 @@ resource "azurerm_network_security_group" "nsg01" {
 resource "azurerm_public_ip" "vm_public_ipaddr11" {
   name                = "vm-public-ip-S3"
   location            = var.location
-  resource_group_name = var.resource_group_name.name
+  resource_group_name = var.resource_group_name  # Use var.resource_group_name directly
   allocation_method   = "Static"
   sku                 = "Standard"
 }

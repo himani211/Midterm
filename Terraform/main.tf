@@ -6,8 +6,8 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    resource_group_name   = "rgtf-S33"
-    storage_account_name  = "himani12345"
+    resource_group_name   = "RGnew"
+    storage_account_name  = "himani789"
     container_name        = "container1"
     key                   = "terraform.tfstate"  # You can customize the state file name
   }

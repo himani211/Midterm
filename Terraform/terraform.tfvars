@@ -2,7 +2,7 @@ subscription_id          = "99829cc0-9954-4b37-ab16-4a9c3bcd7a82"
 
 location                 = "West US"
 
-resource_group_name      = "rgtf-S33"
+resource_group_name      = "rgtf-2"
 
 vnet_name                = "vnettf-S33"
 

@@ -9,7 +9,7 @@ terraform {
     resource_group_name   = "RGnew"
     storage_account_name  = "himani789"
     container_name        = "container1"
-    key                   = "terraform.tfstate"  # You can customize the state file name
+    key                   = "terraform.tfstate"  # Customize the state file name
   }
 }
 
@@ -129,8 +129,8 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 #!/bin/bash
 
 # Update the package repository
-# echo "Updating package repository..."
-# sudo dnf -y update
+echo "Updating package repository..."
+sudo dnf -y update
 
 # Add Docker repository
 echo "Adding Docker repository..."
@@ -160,6 +160,22 @@ sudo dnf install -y maven
 echo "Verifying Maven installation..."
 sudo mvn --version && echo "Maven successfully installed." || echo "Maven installation failed."
 
+# Install epel-release (to enable additional repositories for packages like Ansible)
+echo "Installing epel-release..."
+sudo dnf -y install epel-release
+
+# Install Ansible
+echo "Installing Ansible..."
+sudo dnf -y install ansible
+
+# Install Git
+echo "Installing Git..."
+sudo dnf -y install git
+
+# Install OpenJDK 17
+echo "Installing OpenJDK 17..."
+sudo dnf -y install java-17-openjdk-devel
+
 # Script completion message
 echo "Custom data script execution completed."
 EOT
@@ -170,19 +186,3 @@ EOT
 output "vm_public_ip" {
   value = azurerm_public_ip.vm_public_ipaddr11.ip_address
 }
-
-# Install epel-release (to enable additional repositories for packages like Ansible)
-echo "Installing epel-release..."
-sudo dnf -y install epel-release
- 
-# Install Ansible
-echo "Installing Ansible..."
-sudo dnf -y install ansible
- 
-# Install Git
-echo "Installing Git..."
-sudo dnf -y install git
- 
-# Install JDK 17
-echo "Installing OpenJDK 17..."
-sudo dnf -y install java-17-openjdk-devel

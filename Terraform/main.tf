@@ -97,7 +97,7 @@ resource "azurerm_network_interface_security_group_association" "nic_nsg" {
 
 # Linux Virtual Machine
 resource "azurerm_linux_virtual_machine" "linux_vm" {
-  name                            = "linux-vm-S3"
+  name                            = "linux-vm-S2"
   resource_group_name             = var.resource_group_name
   location                        = var.location
   size                            = var.vm_size

@@ -2,15 +2,15 @@ subscription_id          = "99829cc0-9954-4b37-ab16-4a9c3bcd7a82"
 
 location                 = "West US"
 
-resource_group_name      = "rgtf-2"
+resource_group_name      = "rgtf-S33"
 
 vnet_name                = "vnettf-S33"
 
-address_space            = ["10.10.0.0/19"]
+address_space            = ["10.20.0.0/19"]
 
 subnet_name              = "subnet-S3"
 
-subnet_address_prefix    = ["10.10.0.0/24"]
+subnet_address_prefix    = ["10.20.0.0/24"]
 
 nsg_name                 = "nsgtf-S33"
 

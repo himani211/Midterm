@@ -1,6 +1,5 @@
 provider "azurerm" {
   features {}
-
   subscription_id = var.subscription_id
 }
 
@@ -70,7 +69,7 @@ resource "azurerm_network_security_group" "nsg01" {
 resource "azurerm_public_ip" "vm_public_ipaddr11" {
   name                = "vm-public-ip-S3"
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = var.resource_group_name.name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -129,8 +128,24 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 #!/bin/bash
 
 # Update the package repository
-echo "Updating package repository..."
+# echo "Updating package repository..."
 sudo dnf -y update
+
+# Install epel-release (to enable additional repositories for packages like Ansible)
+echo "Installing epel-release..."
+sudo dnf -y install epel-release
+
+# Install Ansible
+echo "Installing Ansible..."
+sudo dnf -y install ansible
+
+# Install Git
+echo "Installing Git..."
+sudo dnf -y install git
+
+# Install JDK 17
+echo "Installing OpenJDK 17..."
+sudo dnf -y install java-17-openjdk-devel
 
 # Add Docker repository
 echo "Adding Docker repository..."
@@ -159,22 +174,6 @@ sudo dnf install -y maven
 # Verify Maven installation
 echo "Verifying Maven installation..."
 sudo mvn --version && echo "Maven successfully installed." || echo "Maven installation failed."
-
-# Install epel-release (to enable additional repositories for packages like Ansible)
-echo "Installing epel-release..."
-sudo dnf -y install epel-release
-
-# Install Ansible
-echo "Installing Ansible..."
-sudo dnf -y install ansible
-
-# Install Git
-echo "Installing Git..."
-sudo dnf -y install git
-
-# Install OpenJDK 17
-echo "Installing OpenJDK 17..."
-sudo dnf -y install java-17-openjdk-devel
 
 # Script completion message
 echo "Custom data script execution completed."

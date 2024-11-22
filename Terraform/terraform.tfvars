@@ -6,11 +6,11 @@ resource_group_name      = "rgtf-2"
 
 vnet_name                = "vnettf-S33"
 
-address_space            = ["10.20.0.0/19"]
+address_space            = ["10.10.0.0/19"]
 
 subnet_name              = "subnet-S3"
 
-subnet_address_prefix    = ["10.20.0.0/24"]
+subnet_address_prefix    = ["10.10.0.0/24"]
 
 nsg_name                 = "nsgtf-S33"
 
